@@ -1,5 +1,8 @@
 package com.app;
 
+/*
+ * this is a dto class which represents all the customer data
+ */
 public class CustomerDetails {
 	private String customerId;
 	private String contractId;

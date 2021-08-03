@@ -7,6 +7,13 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/* 
+ * 
+ * This is the main class which is used to read the input data
+ * Process the data as per the requirement
+ * Print the results
+ * 
+ */
 public class MainClass {
 
 	public static void main(String[] args) {
@@ -21,6 +28,9 @@ public class MainClass {
 		getZoneBasedCustomers(customers);
 	}
 
+	/*
+	 * this method is used to read the given data and set it to customer objects
+	 */
 	public static List<CustomerDetails> readData() {
 		List<CustomerDetails> customers = new ArrayList<CustomerDetails>();
 
@@ -54,13 +64,15 @@ public class MainClass {
 			scanner.close();
 		} catch (Exception e) {
 			System.out.println("Exception occured inside MainClass.readData method");
-			e.printStackTrace();
 		}
 		
 
 		return customers;
 	}
 
+	/*
+	 * this method is used to get - The number of unique customerId for each contractId
+	 */
 	public static Map<String, Long> getContractBasedCustomerCount(List<CustomerDetails> customers) {
 		Map<String, Long> result = null;
 		try {
@@ -74,11 +86,13 @@ public class MainClass {
 			}
 		} catch (Exception e) {
 			System.out.println("Exception occured inside MainClass.getContractBasedCustomerCount method");
-			e.printStackTrace();
 		}
 		return result;
 	}
 
+	/*
+	 * this method is used to get - The number of unique customerId for each geozone
+	 */
 	public static Map<String, Long> getZoneBasedCustomerCount(List<CustomerDetails> customers) {
 		Map<String, Long> result = null;
 		try {
@@ -92,11 +106,14 @@ public class MainClass {
 			}
 		} catch (Exception e) {
 			System.out.println("Exception occured inside MainClass.getZoneBasedCustomerCount method");
-			e.printStackTrace();
 		}
 		return result;
 	}
-
+	
+	
+	/*
+	 * this method is used to get - The average buildduration for each geozone.
+	 */
 	public static Map<String, Double> getAverageBuildDruation(List<CustomerDetails> customers) {
 		Map<String, Double> result = null;
 		try {
@@ -110,11 +127,13 @@ public class MainClass {
 			}
 		} catch (Exception e) {
 			System.out.println("Exception occured inside MainClass.getAverageBuildDruation method");
-			e.printStackTrace();
 		}
 		return result;
 	}
 
+	/*
+	 * this method is used to get - The list of unique customerId for each geozone.
+	 */
 	public static Map<String, Set<String>> getZoneBasedCustomers(List<CustomerDetails> customers) {
 		Map<String, Set<String>> result = null;
 		try {
@@ -128,7 +147,6 @@ public class MainClass {
 			}
 		} catch (Exception e) {
 			System.out.println("Exception occured inside MainClass.getZoneBasedCustomers method");
-			e.printStackTrace();
 		}
 		return result;
 	}

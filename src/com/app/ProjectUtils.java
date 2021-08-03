@@ -1,12 +1,13 @@
 package com.app;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Function;
-import java.util.function.Predicate;
-
+/*
+ * this is a utils class which contains all the utility methods we use across the project
+ */
 public class ProjectUtils {
 
+	/*
+	 * this method is used to split the data using , and returns String array
+	 */
 	public static String[] getArrayOfStrings(String str) {
         if (str != null && str.length() > 0) {
             return str.split(",");
@@ -14,9 +15,4 @@ public class ProjectUtils {
         return null;
     }
 	
-	public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) 
-	{
-	    Map<Object, Boolean> map = new ConcurrentHashMap<>();
-	    return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
-	}
 }
